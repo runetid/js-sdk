@@ -1,5 +1,5 @@
 {
-  "name": "js-sdk",
+  "name": "@runetid/js-sdk",
   "version": "1.0.2",
   "description": "",
   "main": "index.js",
