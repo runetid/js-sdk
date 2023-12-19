@@ -3,9 +3,6 @@
   "version": "1.0.6",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "release": "standard-version && git push --follow-tags && npm publish"
-  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@runetid"
   },
