@@ -1,10 +1,13 @@
 {
   "name": "@runetid/js-sdk",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@runetid"
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "release": "standard-version && git push --follow-tags && npm publish"
   },
   "keywords": [],
   "author": "",
