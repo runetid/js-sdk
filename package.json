@@ -6,6 +6,9 @@
   "scripts": {
     "release": "standard-version && git push --follow-tags && npm publish"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@runetid"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
