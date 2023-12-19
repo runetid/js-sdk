@@ -1,15 +1,18 @@
 {
   "name": "@runetid/js-sdk",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@runetid"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "standard-version && git push --follow-tags && npm publish"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "standard-version": "^9.5.0"
+  }
 }
