@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-      "outDir": "./dist/",
+      "outDir": "./build/",
       "noImplicitAny": true,
       "module": "ESNext",
       "target": "es5",
@@ -8,7 +8,9 @@
       "allowJs": true,
       "moduleResolution": "node",
       "allowSyntheticDefaultImports": true,
-      "esModuleInterop": true
+      "esModuleInterop": true,
+      "sourceMap": true,
+      "declaration": true
     },
     "ts-node": {
         "compilerOptions": {

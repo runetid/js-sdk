@@ -9,23 +9,25 @@ interface EnvVariables {
 
 export default (env: EnvVariables) => {
     const config: webpack.Configuration = {
-        mode: env.mode ?? 'development',
+        mode: env.mode ?? "production",
         entry: path.resolve(__dirname, 'src', 'index.ts'),
         output: {
+            path: path.resolve(__dirname, 'build'),
             filename: 'bundle.[name].js',
+            libraryTarget: "umd",
             clean: true
         },
         module: {
             rules: [
                 {
-                    test: /\.tsx?$/,
+                    test: /\.(ts|tsx)?$/,
                     use: 'ts-loader',
                     exclude: /node_modules/,
                 },
             ]
         },
         resolve: {
-            extensions: ['.tsx', '.ts', '.js'],
+            extensions: ['.ts', '.js'],
         },    
     }
 

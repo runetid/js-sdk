@@ -6,3 +6,8 @@ const dto = {
     organization: 'runet',
     hasFrontend: true
 }
+
+export {
+    sayHello,
+    dto
+}
