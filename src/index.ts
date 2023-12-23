@@ -1,4 +1,4 @@
-const sayHello = function(name) {
+const sayHello = function(name: string): void {
     console.log('hello ' + name + "!")
 }
 
