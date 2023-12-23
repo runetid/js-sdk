@@ -7,7 +7,7 @@ const dto = {
     hasFrontend: true
 }
 
-module.exports = {
+export {
     sayHello,
     dto
 }
