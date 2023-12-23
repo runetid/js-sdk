@@ -1,13 +1,19 @@
 import path from 'path';
 import webpack from 'webpack';
 
+type BuildMode = 'development' | 'production';
 
-export default (env: any) => {
+interface EnvVariables {
+    mode: BuildMode;
+}
+
+export default (env: EnvVariables) => {
     const config: webpack.Configuration = {
-        mode: 'development',
+        mode: env.mode ?? 'development',
         entry: path.resolve(__dirname, 'src', 'index.ts'),
         output: {
-            filename: 'bundle.js'
+            filename: 'bundle.[name].js',
+            clean: true
         },
         module: {
             rules: [
