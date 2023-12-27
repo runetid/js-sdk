@@ -12,7 +12,7 @@ export default (env: EnvVariables) => {
         mode: env.mode ?? "production",
         entry: path.resolve(__dirname, 'src', 'index.ts'),
         output: {
-            path: path.resolve(__dirname, 'build'),
+            path: path.resolve(__dirname, 'dist'),
             filename: 'bundle.[name].js',
             libraryTarget: "umd",
             clean: true

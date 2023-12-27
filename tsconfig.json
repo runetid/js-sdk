@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-      "outDir": "./build/",
+      "outDir": "./dist/",
       "noImplicitAny": true,
       "module": "ESNext",
       "target": "es5",
@@ -13,7 +13,7 @@
       "declaration": true
     },
     "include": ["src"],
-    "exclude": ["node_modules", "build"],
+    "exclude": ["node_modules", "dist"],
     "ts-node": {
         "compilerOptions": {
           "module": "CommonJS"
