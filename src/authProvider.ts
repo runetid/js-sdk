@@ -5,8 +5,8 @@ interface Login {
     password: string
 }
 
-const authProvider = (BASE_URL: string, HttpHeaders: any): AuthProvider => {
-    return {
+const authProviderCallback = (BASE_URL: string, HttpHeaders: any): AuthProvider => {
+    const authProvider = {
         login({ username, password }: Login) {
 
             const authHeaders = HttpHeaders.getInstance().getHeaders()
@@ -89,6 +89,8 @@ const authProvider = (BASE_URL: string, HttpHeaders: any): AuthProvider => {
             return Promise.resolve(user);
         },
     }
+
+    return authProvider;
 }
 
-export default authProvider;
+export default authProviderCallback;
