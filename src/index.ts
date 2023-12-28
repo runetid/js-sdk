@@ -1,13 +1,5 @@
-const sayHello = function(name: string): void {
-    console.log('hello ' + name + "!")
-}
-
-const dto = {
-    organization: 'runet',
-    hasFrontend: true
-}
+import authProvider from "./authProvider"
 
 export {
-    sayHello,
-    dto
+    authProvider
 }

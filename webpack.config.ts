@@ -29,6 +29,9 @@ export default (env: EnvVariables) => {
         resolve: {
             extensions: ['.ts', '.js'],
         },    
+        externals: {
+            'react-admin': 'react-admin'
+        }
     }
 
     return config;
