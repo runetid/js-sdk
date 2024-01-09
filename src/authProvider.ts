@@ -35,6 +35,8 @@ export const authProviderCallback = (BASE_URL: string, HttpHeaders: any) => {
     const authProvider: AuthProvider = {
         login: ({username, password}: Login) => {
 
+            console.log("work");
+            
             const authHeaders = HttpHeaders.getInstance().getHeaders()
 
             const request = new Request(BASE_URL + '/user/login', {
