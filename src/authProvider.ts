@@ -1,11 +1,11 @@
+import { AuthProvider } from "react-admin";
+
 interface Login { 
     username: string, 
     password: string
 }
 
 export function authUserByToken(auth: any, BASE_URL?: string, HttpHeaders?: any) {
-    console.log("work");
-    
     const authHeaders = HttpHeaders.getInstance().getHeaders()
 
     const userGetRequest = new Request(BASE_URL + '/user/byToken/' + auth.token, {
@@ -32,7 +32,7 @@ export function authUserByToken(auth: any, BASE_URL?: string, HttpHeaders?: any)
 }
 
 export const authProviderCallback = (BASE_URL: string, HttpHeaders: any) => {
-    const authProvider = {
+    const authProvider: AuthProvider = {
         login: ({username, password}: Login) => {
 
             const authHeaders = HttpHeaders.getInstance().getHeaders()
@@ -49,6 +49,7 @@ export const authProviderCallback = (BASE_URL: string, HttpHeaders: any) => {
             });
             return fetch(request)
                 .then(response => {
+                    console.log(response.json());
                     if (response.status < 200 || response.status >= 300) {
                         return Promise.reject(response.statusText)
                     }
