@@ -1,11 +1,9 @@
-import HttpHeaders from "../http/httpHeaders";
-
 interface Login { 
     username: string, 
     password: string
 }
 
-export function authUserByToken(auth: any, BASE_URL?: string) {
+export function authUserByToken(auth: any, BASE_URL?: string, HttpHeaders?: any) {
     const authHeaders = HttpHeaders.getInstance().getHeaders()
 
     const userGetRequest = new Request(BASE_URL + '/user/byToken/' + auth.token, {
@@ -31,7 +29,7 @@ export function authUserByToken(auth: any, BASE_URL?: string) {
         })
 }
 
-export const authProviderCallback = (BASE_URL: string) => {
+export const authProviderCallback = (BASE_URL: string, HttpHeaders: any) => {
     const authProvider = {
         login: ({username, password}: Login) => {
 
