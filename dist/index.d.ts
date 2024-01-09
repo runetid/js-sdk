@@ -1,2 +1,2 @@
-import { authProviderCallback, authUserByToken } from './authProvider';
+import { authProviderCallback, authUserByToken } from './auth-provider/authProvider';
 export { authProviderCallback, authUserByToken };
