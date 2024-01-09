@@ -53,8 +53,7 @@ export const authProviderCallback = (BASE_URL: string, HttpHeaders: any) => {
                     return response.json();
                 })
                 .then(auth => {
-
-                    return authUserByToken(auth);
+                    return authUserByToken(auth, BASE_URL, HttpHeaders);
                 })
                 .catch(() => {
                     return Promise.reject("Invalid username or password");
