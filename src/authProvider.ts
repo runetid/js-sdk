@@ -4,6 +4,8 @@ interface Login {
 }
 
 export function authUserByToken(auth: any, BASE_URL?: string, HttpHeaders?: any) {
+    console.log("work");
+    
     const authHeaders = HttpHeaders.getInstance().getHeaders()
 
     const userGetRequest = new Request(BASE_URL + '/user/byToken/' + auth.token, {
