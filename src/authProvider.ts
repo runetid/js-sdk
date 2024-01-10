@@ -7,6 +7,7 @@ interface Login {
 
 export function authUserByToken(auth: any, BASE_URL?: string, HttpHeaders?: any) {
     const authHeaders = HttpHeaders.getInstance().getHeaders()
+    console.log("work", "authUserByToken");
 
     const userGetRequest = new Request(BASE_URL + '/user/byToken/' + auth.token, {
         method: 'GET',
@@ -33,10 +34,7 @@ export function authUserByToken(auth: any, BASE_URL?: string, HttpHeaders?: any)
 
 export const authProviderCallback = (BASE_URL: string, HttpHeaders: any) => {
     const authProvider: AuthProvider = {
-        login: ({username, password}: Login) => {
-
-            console.log("work");
-            
+        login: ({username, password}: Login) => {            
             const authHeaders = HttpHeaders.getInstance().getHeaders()
 
             const request = new Request(BASE_URL + '/user/login', {
@@ -58,6 +56,8 @@ export const authProviderCallback = (BASE_URL: string, HttpHeaders: any) => {
                     return response.json();
                 })
                 .then(auth => {
+                    console.log("authData", auth);
+                    
                     return authUserByToken(auth, BASE_URL, HttpHeaders);
                 })
                 .catch(() => {
