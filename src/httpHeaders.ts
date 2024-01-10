@@ -18,7 +18,7 @@ class HttpHeaders {
     }
 
     getHeaders(ApiKey: string, secret: string): HttpHeaders {
-        HttpHeaders.instance.Time = Date.now().toString();
+        HttpHeaders.instance.Time = Date.now().toString()
         HttpHeaders.instance.Hash = Md5.hashAsciiStr(ApiKey + HttpHeaders.instance.Time + secret);
         return this
     }

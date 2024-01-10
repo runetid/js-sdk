@@ -1,4 +1,4 @@
-import {GetListParams, fetchUtils} from "react-admin";
+import {GetListParams, GetOneParams, fetchUtils} from "react-admin";
 import jsonServerProvider from 'ra-data-json-server';
 import HttpHeaders from "./httpHeaders";
 
@@ -113,13 +113,20 @@ export const dataProviderCallback = (BASE_URL: string, API_KEY: string, SECRET_K
                     return (json)
                 });
         },
-        getOne: (resource: string, params: any) => {
-            return httpClient(
-                `${BASE_URL}/${resource}/${params.id}`,
-                {
+        getOne: async (resource: string, params: GetOneParams) => {
+            console.log(resource, params, "edit");
+            
+            if(resource.includes('user')) {
+                return httpClient(`${BASE_URL}/user/byRunetId/${params.id}`, {
+                    method: 'GET'
+                }).then(({json}) => (json))
+            }
+            
+            return httpClient(`${BASE_URL}/${resource}/${params.id}`,{
                     method: 'GET',
                 })
-                .then(({json}) => (json));
+                .then(({json}) => (json))
+                .catch((err) => console.log(err))
         },
         create: (resource: string, params: any) => {
 
@@ -132,7 +139,7 @@ export const dataProviderCallback = (BASE_URL: string, API_KEY: string, SECRET_K
                 .then(({json}) => {
                     return {data: json};
                 });
-        }
+        },
     }
 
     return dataProvider;
