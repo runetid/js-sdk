@@ -36,16 +36,16 @@ function encode(params: any, prefix: string | null = null) {
     return items.join("&");
 }
 
-export const dataProviderCallback = (BASE_URL: string) => {
+export const dataProviderCallback = (BASE_URL: string, API_KEY: string, SECRET_KEY: string) => {
     let httpClient = (url: string, options: fetchUtils.Options = {mode: "no-cors"}) => {
         const token = localStorage.getItem('token');
         if (!options.headers) {
     
-            const authHeaders = HttpHeaders.getInstance().getHeaders()
+            const authHeaders = HttpHeaders.getInstance().getHeaders(API_KEY, SECRET_KEY)
             options.headers = new Headers({
                 Accept: 'application/json',
                 Authorization: `Bearer ${token}`,
-                'ApiKey' : authHeaders.ApiKey,
+                'ApiKey' : API_KEY,
                 'Hash': authHeaders.Hash,
                 'Time': authHeaders.Time
             });

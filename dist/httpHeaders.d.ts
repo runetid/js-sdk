@@ -1,11 +1,9 @@
 declare class HttpHeaders {
     Hash: string;
     Time: string;
-    ApiKey: string;
-    private secret;
     private static instance;
     private constructor();
     static getInstance(): HttpHeaders;
-    getHeaders(): HttpHeaders;
+    getHeaders(ApiKey: string, secret: string): HttpHeaders;
 }
 export default HttpHeaders;

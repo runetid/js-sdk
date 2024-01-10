@@ -6,46 +6,41 @@ interface Login {
     password: string
 }
 
-export function authUserByToken(auth: any, BASE_URL?: string) {
-    const authHeaders = HttpHeaders.getInstance().getHeaders()
+export const authProviderCallback = (BASE_URL: string, API_KEY: string, SECRET_KEY: string) => {
+    const authHeaders = HttpHeaders.getInstance().getHeaders(API_KEY, SECRET_KEY);
 
-    const userGetRequest = new Request(BASE_URL + '/user/byToken/' + auth.token, {
-        method: 'GET',
-        headers: new Headers({
-            'Content-Type': 'application/json',
-            'ApiKey': authHeaders.ApiKey,
-            'Hash': authHeaders.Hash,
-            'Time': authHeaders.Time
-        }),
-    });
+    const headers = {
+        'Content-Type': 'application/json',
+        'ApiKey': API_KEY,
+        'Hash': authHeaders.Hash,
+        'Time': authHeaders.Time
+    }
 
-    return fetch(userGetRequest)
-        .then(response => {
-            if (response.status == 200) {
-                return response.json()
-            }
-        })
-        .then(user => {
-            localStorage.setItem('token', auth.token);
-            localStorage.setItem('user', JSON.stringify(user));
-            return;
-        })
-}
+    function authUserByToken(auth: any) {
+        const userGetRequest = new Request(BASE_URL + '/user/byToken/' + auth.token, {
+            method: 'GET',
+            headers: new Headers(headers),
+        });
+    
+        return fetch(userGetRequest)
+            .then(response => {
+                if (response.status == 200) {
+                    return response.json()
+                }
+            })
+            .then(user => {
+                localStorage.setItem('token', auth.token);
+                localStorage.setItem('user', JSON.stringify(user));
+                return;
+            })
+    }
 
-export const authProviderCallback = (BASE_URL: string) => {
     const authProvider: AuthProvider = {
         login: ({username, password}: Login) => {            
-            const authHeaders = HttpHeaders.getInstance().getHeaders()
-
             const request = new Request(BASE_URL + '/user/login', {
                 method: 'POST',
-                body: JSON.stringify({login: username, password: password}),
-                headers: new Headers({
-                    'Content-Type': 'application/json',
-                    'ApiKey': authHeaders.ApiKey,
-                    'Hash': authHeaders.Hash,
-                    'Time': authHeaders.Time
-                }),
+                body: JSON.stringify({login: username, password}),
+                headers: new Headers(headers),
             });
             return fetch(request)
                 .then(response => {
@@ -55,9 +50,7 @@ export const authProviderCallback = (BASE_URL: string) => {
                     return response.json();
                 })
                 .then(auth => {
-                    console.log("authData", auth);
-                    
-                    return authUserByToken(auth, BASE_URL);
+                    return authUserByToken(auth);
                 })
                 .catch(() => {
                     return Promise.reject("Invalid username or password");
@@ -68,15 +61,9 @@ export const authProviderCallback = (BASE_URL: string) => {
             const token = localStorage.getItem('token');
             localStorage.removeItem("token");
 
-            const authHeaders = HttpHeaders.getInstance().getHeaders()
-
             const logoutRequest = new Request(BASE_URL + '/user/logout/', {
                 method: 'POST',
-                headers: new Headers({
-                    'Content-Type': 'application/json', Authorization: `Bearer ${token}`, 'ApiKey': authHeaders.ApiKey,
-                    'Hash': authHeaders.Hash,
-                    'Time': authHeaders.Time
-                }),
+                headers: new Headers({...headers, Authorization: `Bearer ${token}`}),
             });
 
             fetch(logoutRequest)
@@ -97,5 +84,8 @@ export const authProviderCallback = (BASE_URL: string) => {
         },
     }
 
-    return authProvider;
+    return {
+        authProvider,
+        authUserByToken
+    }
 }

@@ -1,11 +1,8 @@
 import {Md5} from 'ts-md5';
 
 class HttpHeaders {
-
     public Hash: string = '';
     public Time: string = '';
-    public ApiKey = 'peij8Ash';
-    private secret = 'Keimai3L';
 
     private static instance: HttpHeaders;
 
@@ -20,9 +17,9 @@ class HttpHeaders {
         return HttpHeaders.instance;
     }
 
-    getHeaders(): HttpHeaders {
-        HttpHeaders.instance.Time = Date.now().toString()
-        HttpHeaders.instance.Hash = Md5.hashAsciiStr(HttpHeaders.instance.ApiKey + HttpHeaders.instance.Time + HttpHeaders.instance.secret);
+    getHeaders(ApiKey: string, secret: string): HttpHeaders {
+        HttpHeaders.instance.Time = Date.now().toString();
+        HttpHeaders.instance.Hash = Md5.hashAsciiStr(ApiKey + HttpHeaders.instance.Time + secret);
         return this
     }
 }

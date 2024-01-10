@@ -7,7 +7,7 @@ export declare enum HttpMethod {
     OPTIONS = "OPTIONS",
     POST = "POST"
 }
-export declare const dataProviderCallback: (BASE_URL: string) => {
+export declare const dataProviderCallback: (BASE_URL: string, API_KEY: string, SECRET_KEY: string) => {
     fetch: (resource: string, method: HttpMethod, payload: object | null) => Promise<{
         status: number;
         headers: Headers;
