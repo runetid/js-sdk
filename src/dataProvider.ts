@@ -1,7 +1,8 @@
 import {GetListParams, fetchUtils} from "react-admin";
 import jsonServerProvider from 'ra-data-json-server';
+import HttpHeaders from "./httpHeaders";
 
-enum HttpMethod {
+export enum HttpMethod {
     GET = 'GET',
     PUT = 'PUT',
     DELETE = 'DELETE',
@@ -35,7 +36,7 @@ function encode(params: any, prefix: string | null = null) {
     return items.join("&");
 }
 
-export const dataProviderCallback = (BASE_URL: string, HttpHeaders: any) => {
+export const dataProviderCallback = (BASE_URL: string) => {
     let httpClient = (url: string, options: fetchUtils.Options = {mode: "no-cors"}) => {
         const token = localStorage.getItem('token');
         if (!options.headers) {

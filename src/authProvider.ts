@@ -1,11 +1,12 @@
 import { AuthProvider } from "react-admin";
+import HttpHeaders from "./httpHeaders";
 
 interface Login { 
     username: string, 
     password: string
 }
 
-export function authUserByToken(auth: any, BASE_URL?: string, HttpHeaders?: any) {
+export function authUserByToken(auth: any, BASE_URL?: string) {
     const authHeaders = HttpHeaders.getInstance().getHeaders()
 
     const userGetRequest = new Request(BASE_URL + '/user/byToken/' + auth.token, {
@@ -31,7 +32,7 @@ export function authUserByToken(auth: any, BASE_URL?: string, HttpHeaders?: any)
         })
 }
 
-export const authProviderCallback = (BASE_URL: string, HttpHeaders: any) => {
+export const authProviderCallback = (BASE_URL: string) => {
     const authProvider: AuthProvider = {
         login: ({username, password}: Login) => {            
             const authHeaders = HttpHeaders.getInstance().getHeaders()
@@ -56,7 +57,7 @@ export const authProviderCallback = (BASE_URL: string, HttpHeaders: any) => {
                 .then(auth => {
                     console.log("authData", auth);
                     
-                    return authUserByToken(auth, BASE_URL, HttpHeaders);
+                    return authUserByToken(auth, BASE_URL);
                 })
                 .catch(() => {
                     return Promise.reject("Invalid username or password");

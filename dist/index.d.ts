@@ -1,3 +1,4 @@
 import { authProviderCallback, authUserByToken } from './authProvider';
-import { dataProviderCallback } from './dataProvider';
-export { authProviderCallback, authUserByToken, dataProviderCallback };
+import { dataProviderCallback, HttpMethod } from './dataProvider';
+import HttpHeaders from "./httpHeaders";
+export { authProviderCallback, authUserByToken, dataProviderCallback, HttpMethod, HttpHeaders };

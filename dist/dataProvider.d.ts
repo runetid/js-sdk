@@ -1,5 +1,5 @@
 import { GetListParams } from "react-admin";
-declare enum HttpMethod {
+export declare enum HttpMethod {
     GET = "GET",
     PUT = "PUT",
     DELETE = "DELETE",
@@ -7,7 +7,7 @@ declare enum HttpMethod {
     OPTIONS = "OPTIONS",
     POST = "POST"
 }
-export declare const dataProviderCallback: (BASE_URL: string, HttpHeaders: any) => {
+export declare const dataProviderCallback: (BASE_URL: string) => {
     fetch: (resource: string, method: HttpMethod, payload: object | null) => Promise<{
         status: number;
         headers: Headers;
@@ -26,4 +26,3 @@ export declare const dataProviderCallback: (BASE_URL: string, HttpHeaders: any) 
     delete: <RecordType_3 extends import("react-admin").RaRecord<import("react-admin").Identifier> = any>(resource: string, params: import("react-admin").DeleteParams<RecordType_3>) => Promise<import("react-admin").DeleteResult<RecordType_3>>;
     deleteMany: <RecordType_4 extends import("react-admin").RaRecord<import("react-admin").Identifier> = any>(resource: string, params: import("react-admin").DeleteManyParams<RecordType_4>) => Promise<import("react-admin").DeleteManyResult<RecordType_4>>;
 };
-export {};
