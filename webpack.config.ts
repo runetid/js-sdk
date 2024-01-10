@@ -30,7 +30,8 @@ export default (env: EnvVariables) => {
             extensions: ['.ts', '.js'],
         },    
         externals: {
-            'react-admin': 'react-admin'
+            'react-admin': 'react-admin',
+            'ra-data-json-server': 'ra-data-json-server'
         }
     }
 
