@@ -113,13 +113,16 @@ export const dataProviderCallback = (BASE_URL: string, API_KEY: string, SECRET_K
                     return (json)
                 });
         },
-        getOne: async (resource: string, params: GetOneParams) => {
-            console.log(resource, params, "edit");
+        async getOne(resource: string, params: GetOneParams) {
+            
+            // console.log(resource, params, "edit");
             
             if(resource.includes('user')) {
-                return httpClient(`${BASE_URL}/user/byRunetId/${params.id}`, {
-                    method: 'GET'
-                }).then(({json}) => (json))
+                dataProvider.getOne('user', {id: params.id})
+                    .then(response => console.log(response))
+                // return httpClient(`${BASE_URL}/user/byRunetId/${params.id}`, {
+                //     method: 'GET'
+                // }).then(({json}) => (json))
             }
             
             return httpClient(`${BASE_URL}/${resource}/${params.id}`,{

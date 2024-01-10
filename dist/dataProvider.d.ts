@@ -16,7 +16,7 @@ export declare const dataProviderCallback: (BASE_URL: string, API_KEY: string, S
     }>;
     getList: (resource: string, params: GetListParams) => Promise<any>;
     getManyReference: (resource: string, params: any) => Promise<any>;
-    getOne: (resource: string, params: GetOneParams) => Promise<any>;
+    getOne(resource: string, params: GetOneParams): Promise<any>;
     create: (resource: string, params: any) => Promise<{
         data: any;
     }>;
