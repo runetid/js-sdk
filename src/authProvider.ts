@@ -49,7 +49,6 @@ export const authProviderCallback = (BASE_URL: string, HttpHeaders: any) => {
             });
             return fetch(request)
                 .then(response => {
-                    console.log(response.json());
                     if (response.status < 200 || response.status >= 300) {
                         return Promise.reject(response.statusText)
                     }
