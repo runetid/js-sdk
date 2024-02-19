@@ -18,7 +18,7 @@
     "@types/node": "^20.10.5",
     "@types/webpack": "^5.28.5",
     "@types/webpack-dev-server": "^4.7.2",
-    "ra-data-json-server": "^4.16.5",
+    "ra-data-json-server": "^4.16.11",
     "react-admin": "^4.16.4",
     "standard-version": "^9.5.0",
     "ts-loader": "^9.5.1",
