@@ -8,7 +8,7 @@ export interface User {
     photo: string;
     phone: string;
     gender: string;
-    birthday: string | Date;
+    birthday: string;
     password: string;
     visible: boolean;
 }
