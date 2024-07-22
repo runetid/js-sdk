@@ -1,4 +1,5 @@
 import {User} from "./user";
+import {RunetEvent} from "./runetEvent";
 
 export interface Participant {
     id: number;
@@ -9,6 +10,7 @@ export interface Participant {
     user: User;
     role: Role;
     created_at: string;
+    event: RunetEvent;
 }
 
 export interface Role {
