@@ -1,5 +1,5 @@
 import Participant from "./participant";
-export interface Event {
+export interface RunetEvent {
     event_id: number;
     id: number;
     title: string;

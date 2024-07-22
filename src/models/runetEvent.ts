@@ -1,6 +1,6 @@
 import Participant from "./participant";
 
-export interface Event {
+export interface RunetEvent {
     // Поле видимое в программе, в других местах нет необходимости его использовать
     event_id: number;
     id: number;
