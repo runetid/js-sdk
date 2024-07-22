@@ -9,4 +9,5 @@ import { Seo } from "./models/seo";
 import { User } from "./models/user";
 import { Participant, Role } from "./models/participant";
 import { Partner } from "./models/partner";
-export { ApiAccount, ApiAccountDomain, RunetEvent, EventPlace, Hall, PayOrder, PayOrderJuridical, OrderItem, Product, Price, RbacGroup, RbacRule, Seo, User, Participant, Role, Partner };
+import { Widget } from "./models/widget";
+export { ApiAccount, ApiAccountDomain, RunetEvent, EventPlace, Hall, PayOrder, PayOrderJuridical, OrderItem, Product, Price, RbacGroup, RbacRule, Seo, User, Participant, Role, Partner, Widget };

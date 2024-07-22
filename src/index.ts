@@ -9,6 +9,7 @@ import {Seo} from "./models/seo";
 import {User} from "./models/user";
 import {Participant, Role} from "./models/participant";
 import {Partner} from "./models/partner";
+import {Widget} from "./models/widget";
 
 export {
     ApiAccount,
@@ -27,5 +28,6 @@ export {
     User,
     Participant,
     Role,
-    Partner
+    Partner,
+    Widget
 }
