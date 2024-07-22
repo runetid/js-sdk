@@ -1,5 +1,6 @@
 import {Participant} from "./participant";
 import {Hall} from "./hall";
+import {Widget} from "./widget";
 
 export interface RunetEvent {
     // Поле видимое в программе, в других местах нет необходимости его использовать
@@ -22,6 +23,10 @@ export interface RunetEvent {
     participants: Participant[];
     paid: boolean;
     external: boolean;
+    widgets: Array<Widget>;
+    video_mime: string
+    approved: number
+    full_info_embedded_url: string,
 }
 
 export const EventTypes = [
