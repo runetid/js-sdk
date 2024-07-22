@@ -26,3 +26,18 @@ export interface EventPlace {
     id: number|null|string;
     place: string;
 }
+
+export const EventTypes = [
+    { id: 1, name: "Конференция" },
+    { id: 6, name: "Конкурс премия" },
+    { id: 7, name: "Другие мероприятия" },
+    { id: 5, name: "Партнерская конференция" },
+    { id: 4, name: "Круглый стол" },
+    { id: 3, name: "Вебинар" },
+    { id: 2, name: "Семинар тренинг" },
+    { id: 8, name: "Корпоративное мероприятие" },
+    { id: 9, name: "Закрытое мероприятие" },
+    { id: 10, name: "Презентация" },
+    { id: 11, name: "Клиентское мероприятие" },
+    { id: 12, name: "Выставка" },
+]

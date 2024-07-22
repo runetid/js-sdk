@@ -1,5 +1,5 @@
 import {ApiAccount, ApiAccountDomain} from "./models/apiAccount";
-import {RunetEvent, EventPlace} from "./models/runetEvent";
+import {RunetEvent, EventPlace, EventTypes} from "./models/runetEvent";
 import {Hall} from "./models/hall";
 import {PayOrder, PayOrderJuridical, OrderItem} from "./models/payOrder";
 import {Product, Price} from "./models/product";
@@ -33,5 +33,6 @@ export {
     PartnerTypes,
     Widget,
     getWidgetByPosition,
-    Podcast
+    Podcast,
+    EventTypes
 }

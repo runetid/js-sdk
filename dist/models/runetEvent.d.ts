@@ -23,3 +23,7 @@ export interface EventPlace {
     id: number | null | string;
     place: string;
 }
+export declare const EventTypes: {
+    id: number;
+    name: string;
+}[];
