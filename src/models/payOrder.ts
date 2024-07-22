@@ -45,10 +45,12 @@ export interface OrderItem {
     payer_id: number,
     cost: number,
     paid: boolean,
-    paid_time: string,
-    refund: boolean,
-    order_id: number,
     product_id: number,
     product: Product,
     attributes: any,
+    description: string,
+    paid_time: Date | string | null,
+    refund: boolean,
+    refund_time: Date | string | null,
+    order_id: number
 }

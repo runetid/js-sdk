@@ -10,6 +10,7 @@ import {User} from "./models/user";
 import {Participant, Role} from "./models/participant";
 import {Partner} from "./models/partner";
 import {Widget} from "./models/widget";
+import {Podcast} from "./models/podcast";
 
 export {
     ApiAccount,
@@ -29,5 +30,6 @@ export {
     Participant,
     Role,
     Partner,
-    Widget
+    Widget,
+    Podcast
 }

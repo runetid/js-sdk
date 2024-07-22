@@ -10,4 +10,5 @@ import { User } from "./models/user";
 import { Participant, Role } from "./models/participant";
 import { Partner } from "./models/partner";
 import { Widget } from "./models/widget";
-export { ApiAccount, ApiAccountDomain, RunetEvent, EventPlace, Hall, PayOrder, PayOrderJuridical, OrderItem, Product, Price, RbacGroup, RbacRule, Seo, User, Participant, Role, Partner, Widget };
+import { Podcast } from "./models/podcast";
+export { ApiAccount, ApiAccountDomain, RunetEvent, EventPlace, Hall, PayOrder, PayOrderJuridical, OrderItem, Product, Price, RbacGroup, RbacRule, Seo, User, Participant, Role, Partner, Widget, Podcast };
