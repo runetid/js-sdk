@@ -12,6 +12,7 @@ export interface RunetEvent {
     start_time: string;
     places: Array<Hall> | null;
     logo_source: string;
+    video_source: string;
     default_role_id: number;
     visible: boolean;
     visible_on_main: boolean;
