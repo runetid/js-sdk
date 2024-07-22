@@ -7,6 +7,7 @@ import {RbacGroup} from "./models/rbacRule";
 import {RbacRule,} from "./models/rbacRule";
 import {Seo} from "./models/seo";
 import {User} from "./models/user";
+import {Participant, Role} from "./models/participant";
 
 export {
     ApiAccount,
@@ -22,5 +23,7 @@ export {
     RbacGroup,
     RbacRule,
     Seo,
-    User
+    User,
+    Participant,
+    Role
 }
