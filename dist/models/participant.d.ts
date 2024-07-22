@@ -1,5 +1,5 @@
 import { User } from "./user";
-export default interface Participant {
+export interface Participant {
     id: number;
     event_id: number;
     role_id: number;

@@ -7,4 +7,5 @@ import { RbacGroup } from "./models/rbacRule";
 import { RbacRule } from "./models/rbacRule";
 import { Seo } from "./models/seo";
 import { User } from "./models/user";
-export { ApiAccount, ApiAccountDomain, RunetEvent, EventPlace, Hall, PayOrder, PayOrderJuridical, OrderItem, Product, Price, RbacGroup, RbacRule, Seo, User };
+import { Participant, Role } from "./models/participant";
+export { ApiAccount, ApiAccountDomain, RunetEvent, EventPlace, Hall, PayOrder, PayOrderJuridical, OrderItem, Product, Price, RbacGroup, RbacRule, Seo, User, Participant, Role };

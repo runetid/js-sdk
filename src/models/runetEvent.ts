@@ -1,4 +1,4 @@
-import Participant from "./participant";
+import {Participant} from "./participant";
 
 export interface RunetEvent {
     // Поле видимое в программе, в других местах нет необходимости его использовать
