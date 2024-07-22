@@ -1,5 +1,5 @@
 import {ApiAccount, ApiAccountDomain} from "./models/apiAccount";
-import {RunetEvent, EventPlace, EventTypes} from "./models/runetEvent";
+import {RunetEvent, EventTypes} from "./models/runetEvent";
 import {Hall} from "./models/hall";
 import {PayOrder, PayOrderJuridical, OrderItem} from "./models/payOrder";
 import {Product, Price} from "./models/product";
@@ -16,7 +16,6 @@ export {
     ApiAccount,
     ApiAccountDomain,
     RunetEvent,
-    EventPlace,
     Hall,
     PayOrder,
     PayOrderJuridical,

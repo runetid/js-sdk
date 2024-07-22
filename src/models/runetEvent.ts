@@ -1,4 +1,5 @@
 import {Participant} from "./participant";
+import {Hall} from "./hall";
 
 export interface RunetEvent {
     // Поле видимое в программе, в других местах нет необходимости его использовать
@@ -11,7 +12,7 @@ export interface RunetEvent {
     end_time: string;
     site_url: string;
     start_time: string;
-    places: Array<EventPlace>|null;
+    places: Array<Hall>|null;
     logo_source: string;
     default_role_id: number;
     visible: boolean;
@@ -20,11 +21,6 @@ export interface RunetEvent {
     participants: Participant[];
     paid: boolean;
     external: boolean;
-}
-
-export interface EventPlace {
-    id: number|null|string;
-    place: string;
 }
 
 export const EventTypes = [
