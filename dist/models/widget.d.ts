@@ -4,3 +4,4 @@ export interface Widget {
     position: number;
     content: string;
 }
+export declare function getWidgetByPosition(widgets: Widget[] | null, position: number): Widget | null;

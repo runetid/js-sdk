@@ -9,7 +9,7 @@ import {Seo} from "./models/seo";
 import {User} from "./models/user";
 import {Participant, Role} from "./models/participant";
 import {Partner, PartnerTypes} from "./models/partner";
-import {Widget} from "./models/widget";
+import {Widget, getWidgetByPosition} from "./models/widget";
 import {Podcast} from "./models/podcast";
 
 export {
@@ -32,5 +32,6 @@ export {
     Partner,
     PartnerTypes,
     Widget,
+    getWidgetByPosition,
     Podcast
 }

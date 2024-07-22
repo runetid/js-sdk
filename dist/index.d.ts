@@ -9,6 +9,6 @@ import { Seo } from "./models/seo";
 import { User } from "./models/user";
 import { Participant, Role } from "./models/participant";
 import { Partner, PartnerTypes } from "./models/partner";
-import { Widget } from "./models/widget";
+import { Widget, getWidgetByPosition } from "./models/widget";
 import { Podcast } from "./models/podcast";
-export { ApiAccount, ApiAccountDomain, RunetEvent, EventPlace, Hall, PayOrder, PayOrderJuridical, OrderItem, Product, Price, RbacGroup, RbacRule, Seo, User, Participant, Role, Partner, PartnerTypes, Widget, Podcast };
+export { ApiAccount, ApiAccountDomain, RunetEvent, EventPlace, Hall, PayOrder, PayOrderJuridical, OrderItem, Product, Price, RbacGroup, RbacRule, Seo, User, Participant, Role, Partner, PartnerTypes, Widget, getWidgetByPosition, Podcast };
