@@ -6,6 +6,7 @@ export interface RunetEvent {
     id: number;
     title: string;
     id_name: string;
+    order_prefix: string;
     info: string;
     full_info: string;
     end_time: string;
