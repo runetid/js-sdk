@@ -1,8 +1,8 @@
 export interface Price {
     id: number;
     cost: number;
-    start_time: string;
-    end_time: string;
+    start_time?: string;
+    end_time?: string;
 }
 
 export interface Product {
