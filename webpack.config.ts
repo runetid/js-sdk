@@ -28,11 +28,7 @@ export default (env: EnvVariables) => {
         },
         resolve: {
             extensions: ['.ts', '.js'],
-        },    
-        externals: {
-            'react-admin': 'react-admin',
-            'ra-data-json-server': 'ra-data-json-server'
-        }
+        },
     }
 
     return config;
