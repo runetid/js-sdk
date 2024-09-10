@@ -9,9 +9,11 @@ export interface RunetEvent {
     order_prefix: string;
     info: string;
     full_info: string;
-    end_time: string;
-    site_url: string;
     start_time: string;
+    start_time_text: string;
+    end_time: string;
+    end_time_text: string;
+    site_url: string;
     places: Array<Hall> | null;
     logo_source: string;
     video_source: string;
