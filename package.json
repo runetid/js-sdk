@@ -1,6 +1,6 @@
 {
   "name": "@runetid/js-sdk",
-  "version": "1.2.26",
+  "version": "1.2.27",
   "description": "Runet.id JavaScript SDK",
   "main": "./dist/bundle.main.js",
   "publishConfig": {
